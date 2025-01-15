@@ -1,59 +1,28 @@
 <script lang="ts">
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcomeFallback from '$lib/images/svelte-welcome.png';
-</script>
+	// Add any required logic for the page here
+  </script>
+  
+  <div class="flex flex-col items-center justify-center min-h-screen space-y-8">
+	<!-- Logo and Description -->
+	<div class="flex flex-col items-center space-y-4">
+	  <!-- Centered Logo -->
+	  <div class="flex justify-center">
+		<div class="bg-white rounded-full w-[160px] h-[160px] flex items-center justify-center shadow-lg">
+		  <img src="compmathlogo.png" alt="Math Club Logo" class="w-[170px] h-[170px]" />
+		</div>
+	  </div>
+	  <div class="h-[10vh]"></div> <!-- This creates a "page-like" spacing -->
 
-<svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Svelte demo app" />
-</svelte:head>
-
-<section>
-	<h1>
-		<span class="welcome">
-			<picture>
-				<source srcset={welcome} type="image/webp" />
-				<img src={welcomeFallback} alt="Welcome" />
-			</picture>
-		</span>
-
-		to your new<br />SvelteKit app
-	</h1>
-
-	<h2>
-		try editing <strong>src/routes/+page.svelte</strong>
-	</h2>
-
-	<Counter />
-</section>
-
-<style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
-
-	h1 {
-		width: 100%;
-	}
-
-	.welcome {
-		display: block;
-		position: relative;
-		width: 100%;
-		height: 0;
-		padding: 0 0 calc(100% * 495 / 2048) 0;
-	}
-
-	.welcome img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		display: block;
-	}
-</style>
+	  <!-- Centered Description -->
+	  <p class="bg-blue-300 text-white rounded-md p-6 max-w-[800px] text-center shadow-lg">
+		Tino Competitive Math Club (or Math Club) is a club where students come together to learn and practice competition math and learn about other cool math topics. We organize the AMC Mathematics Competitions, and our meetings help prepare students for these competitions. No prior competition math experience is required, and we cater to students of all skill levels.
+	  </p>
+	</div>
+	<!-- Add a large spacer -->
+	<div class="h-[50vh]"></div> <!-- This creates a "page-like" spacing -->
+  
+	<!-- About Us Section -->
+	
+		
+  </div>
+  

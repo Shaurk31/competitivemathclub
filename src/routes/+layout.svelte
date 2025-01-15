@@ -1,57 +1,34 @@
 <script lang="ts">
-	import Header from './Header.svelte';
-	import '../app.css';
-	
-	let { children } = $props();
-</script>
-
-<div class="app">
-	<Header />
-
-	<main>
-		{@render children()}
+	import "../app.css";
+  
+	let activeTab = "about"; // Default active tab
+  </script>
+  
+  <div class="bg-grid-pattern min-h-screen flex flex-col items-center">
+	<!-- Navigation Bar -->
+	<nav class="flex space-x-4 p-4">
+	  <a
+		href="/"
+		class="px-6 py-2 rounded-full shadow transition text-white"
+		class:bg-blue-500="{activeTab === 'about'}"
+		class:bg-blue-300="{activeTab !== 'about'}"
+		on:click="{() => (activeTab = 'about')}"
+	  >
+		About
+	  </a>
+	  <a
+		href="/meet-the-team"
+		class="px-6 py-2 rounded-full shadow transition text-white"
+		class:bg-blue-500="{activeTab === 'team'}"
+		class:bg-blue-300="{activeTab !== 'team'}"
+		on:click="{() => (activeTab = 'team')}"
+	  >
+		Meet the Team
+	  </a>
+	</nav>
+  
+	<main class="p-8 w-full max-w-[1024px]">
+	  <slot />
 	</main>
-
-	<footer>
-		<p>
-			visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to learn about SvelteKit
-		</p>
-	</footer>
-</div>
-
-<style>
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: 100vh;
-	}
-
-	main {
-		flex: 1;
-		display: flex;
-		flex-direction: column;
-		padding: 1rem;
-		width: 100%;
-		max-width: 64rem;
-		margin: 0 auto;
-		box-sizing: border-box;
-	}
-
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
-</style>
+  </div>
+  
